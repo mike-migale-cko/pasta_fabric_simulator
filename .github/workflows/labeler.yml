@@ -1,1 +1,14 @@
+"Security":
+  - security/**
+  - "**/*.sec"
 
+"Bug":
+  - "**/*.patch"
+  - "**/bugfix/**"
+
+"Documentation":
+  - docs/**
+  - "**/*.md"
+
+"Moderation":
+  - .github/workflows/moderate-pr.yml
