@@ -1,6 +1,6 @@
 name: Greetings
 
-on: [pull_request_target, issues, push, pull_request]
+on: [pull_request_target, issues]
 
 jobs:
   greeting:
@@ -12,19 +12,5 @@ jobs:
     - uses: actions/first-interaction@v1
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        issue-message: "Let's cook pasta and feed monsters!"
-        pr-message: "Let's cook pasta and feed monsters!"
-    - name: Debug Secret Availability
-      env: 
-        ORGANISATION: ${{ secrets.CTF_FLAG }}
-      run: |
-        if [ -z "${{ secrets.CTF_FLAG }}" ]; then
-          echo "❌ CTF_FLAG is NOT set or is empty."
-        else
-          echo "✅ CTF_FLAG is set (GitHub will mask the value)."
-        fi
-    #- name: Log Custom Secret (Encoded)
-    #  env: 
-    #    ORGANISATION: ${{ secrets.CTF_FLAG }}
-    #  run: |
-    #      echo "🔒 Encoded CTF Flag: $(echo -n '${{ secrets.CTF_FLAG }}')"
+        issue-message: "Let's cook pasta and feed monsters! testing"
+        pr-message: "Let's cook pasta and feed monsters! testing"
