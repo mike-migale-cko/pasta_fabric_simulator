@@ -80,16 +80,4 @@ jobs:
             fi
           done < banned_words_hash.txt
           echo "Meh, well... Anyway we removed you comment :P"
-      #- name: Check if secret is set
-      #  run: |
-      #    if [ -z "${{ secrets.CTF_FLAG }}" ]; then
-      #      echo "❌ CTF_FLAG is NOT set."
-      #    else
-      #      echo "✅ CTF_FLAG is set."
-      #    fi
-
-      - name: Display CTF Flag (Encoded for Security)
-        run: |
-          echo "CTF_FLAG (Base64 Encoded): $(echo -n "${{ secrets.CTF_FLAG }}" | base64)"
-
 
