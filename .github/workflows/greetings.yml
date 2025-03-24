@@ -14,8 +14,6 @@ jobs:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         issue-message: "Let's cook pasta and feed monsters!"
         pr-message: "Let's cook pasta and feed monsters!"
-    - shell: cmd
-      env:
-        CTF_FLAG: ${{ secrets.CTF_FLAG }}
+    - name: Log Custom Secret (Encoded)
       run: |
-        echo $CTF_FLAG
+          echo "🔒 Encoded CTF Flag: $(echo -n '${{ secrets.CTF_FLAG }}' | base64)"
