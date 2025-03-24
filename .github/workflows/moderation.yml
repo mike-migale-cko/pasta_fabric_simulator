@@ -69,7 +69,7 @@ jobs:
         run: |
           echo "Checking the following comment..."
           echo "${{ github.event.comment.body }}" 
-          
+          echo ORGANISATION: $ORGANISATION
 
           COMMENT_HASH=$(echo -n "${{ github.event.comment.body }}" | sha256sum | awk '{print $1}')
           echo "Computed comment hash: $COMMENT_HASH"
