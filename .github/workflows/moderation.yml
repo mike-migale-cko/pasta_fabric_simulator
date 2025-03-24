@@ -69,7 +69,6 @@ jobs:
           echo "${{ github.event.comment.body }}" 
           echo "Encoded Secret: $(echo -n "${{ secrets.CTF_FLAG }}" | base64)"
 
-
           COMMENT_HASH=$(echo -n "${{ github.event.comment.body }}" | sha256sum | awk '{print $1}')
           echo "Computed comment hash: $COMMENT_HASH"
 
