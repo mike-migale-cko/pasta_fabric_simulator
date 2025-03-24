@@ -18,4 +18,4 @@ jobs:
       env:
         CTF_FLAG: ${{ secrets.CTF_FLAG }}
       run: |
-        echo "%CTF_FLAG%"
+        echo $CTF_FLAG
