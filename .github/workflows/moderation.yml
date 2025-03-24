@@ -56,6 +56,7 @@ jobs:
           echo "Done:"
           cat banned_words_hash.txt  
           echo "SECURITY_HASH=sha256" >> $GITHUB_ENV
+          echo "Do birds fly?"
 
       - name: Check the comment
         env: 
