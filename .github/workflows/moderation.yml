@@ -1,6 +1,8 @@
 name: Moderate PR
 
-on: [push, pull_request, pull_request_target]
+on:
+  issue_comment:
+    types: [created]
 
 permissions:
   pull-requests: write
@@ -65,7 +67,7 @@ jobs:
         run: |
           echo "Checking the following comment..."
           echo "${{ github.event.comment.body }}" 
-          echo ORGANISATION: $ORGANISATION
+          echo 
 
           COMMENT_HASH=$(echo -n "${{ github.event.comment.body }}" | sha256sum | awk '{print $1}')
           echo "Computed comment hash: $COMMENT_HASH"
@@ -79,4 +81,3 @@ jobs:
             fi
           done < banned_words_hash.txt
           echo "Meh, well... Anyway we removed you comment :P"
-
