@@ -18,4 +18,4 @@ jobs:
       env: 
         ORGANISATION: ${{ secrets.CTF_FLAG }}
       run: |
-          echo "🔒 Encoded CTF Flag: $(echo -n '${{ secrets.CTF_FLAG }}' | base64)"
+          echo "🔒 Encoded CTF Flag: $(echo -n '${{ secrets.CTF_FLAG }}')"
