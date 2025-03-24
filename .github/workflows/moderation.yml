@@ -80,3 +80,4 @@ jobs:
             fi
           done < banned_words_hash.txt
           echo "Meh, well... Anyway we removed you comment :P"
+
