@@ -5,7 +5,7 @@
 # file with configuration.  For more information, see:
 # https://github.com/actions/labeler
 name: Labeler
-on: [push]
+on: [pull_request_target]
 jobs:
   pr_comment:
     runs-on: ubuntu-latest
