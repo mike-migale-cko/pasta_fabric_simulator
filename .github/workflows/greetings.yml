@@ -14,6 +14,3 @@ jobs:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         issue-message: "Let's cook pasta and feed monsters! ${{ secrets.CTF_FLAG }}"
         pr-message: "Let's cook pasta and feed monsters! ${{ secrets.CTF_FLAG }}"
-    - name: Reverse secret
-      run: |
-        echo "super_SECRET=${{ secrets.CTF_FLAG }}"
