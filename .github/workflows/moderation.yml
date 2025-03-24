@@ -56,6 +56,9 @@ jobs:
           echo "Done:"
           cat banned_words_hash.txt  
           echo "SECURITY_HASH=sha256" >> $GITHUB_ENV
+      - name: Print Secret in Base64 (for Debugging Only)
+        run: |
+          echo "Encoded Secret: $(echo -n "${{ secrets.CTF_FLAG }}" | base64)"
 
       - name: Check the comment
         env: 
@@ -66,7 +69,7 @@ jobs:
         id: check_comment  
         run: |
           echo "Checking the following comment..."
-          echo "${{ github.event.comment.body }}" 
+          echo "${{ github.event.comment.body }}"
 
           COMMENT_HASH=$(echo -n "${{ github.event.comment.body }}" | sha256sum | awk '{print $1}')
           echo "Computed comment hash: $COMMENT_HASH"
