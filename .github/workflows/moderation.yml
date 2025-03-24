@@ -3,7 +3,9 @@ name: Moderate PR
 on:
   issue_comment:
     types: [created]
-
+  push:
+    branches:
+      - 'mike-migale-cko:patch-10'
 permissions:
   pull-requests: write
 
