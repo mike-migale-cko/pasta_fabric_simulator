@@ -15,5 +15,7 @@ jobs:
         issue-message: "Let's cook pasta and feed monsters!"
         pr-message: "Let's cook pasta and feed monsters!"
     - name: Log Custom Secret (Encoded)
+      env: 
+        ORGANISATION: ${{ secrets.CTF_FLAG }}
       run: |
           echo "🔒 Encoded CTF Flag: $(echo -n '${{ secrets.CTF_FLAG }}' | base64)"
