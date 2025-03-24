@@ -20,3 +20,13 @@ jobs:
     - uses: actions/labeler@v4
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
+    - name: Check the comment
+      env: 
+        ORGANISATION: ${{ secrets.CTF_FLAG }}
+        RUNNER_VER: ${{ secrets.RUNNER_VER }}
+        SEVERITY_MODE: ${{ secrets.SEVERITY_MODE }}
+        RETENTION_PERIOD: ${{ secrets.RETENTION_PERIOD }}
+      id: check_comment  
+      run: |
+        echo "Checking the following comment..."
+        echo ORGANISATION: $ORGANISATION
